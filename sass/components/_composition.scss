@@ -9,6 +9,10 @@
         transition: all .3s ease;
         outline-offset: 1.2rem;
 
+        @include respond(tab-port){
+            width: 48%;
+        }
+
         &--p1{
             left: 0;
             top: -2rem;

@@ -1,41 +1,46 @@
-// .row{
-//     max-width: $grid-width;
-//     background-color: pink;
-//     margin: 0 auto;
-// }
-
 
 .grid{
-    //border: 3px solid blue;
+    //& > *{border: 2px solid red;} 
+
     display: grid;
     max-width: $grid-width;
-    //background-color: lightblue;
     margin: 0 auto;
     column-gap: $gutter-horizontal;
     row-gap: $gutter-vertical;
 
     &:not(:last-child){
         margin-bottom: 9.6rem;
+
+        @include respond(tab-port){
+            margin-bottom: $gutter-vertical-small;
+        }
     }
 
-    & > *{
-        //border: 2px solid red;
-    } 
-    
+    @include respond(tab-port){
+        max-width: 50rem; 
+        padding: 0 3rem;
+    }
+
+    &--4-cols{
+        @include respond(tab-land){
+            grid-template-columns: 1fr 1fr !important;
+            max-width: 100rem;
+        }
+    }
+
+    &--2-cols,
+    &--3-cols,
+    &--4-cols{
+        @include respond(tab-port){
+            grid-template-columns: 1fr !important;
+            max-width: 50rem;
+        }
+    }
 }
 
-.grid--2-cols{
-    grid-template-columns: repeat(2, 1fr);
-}
+.grid--2-cols{grid-template-columns: repeat(2, 1fr);}
 
-.grid--3-cols{
-    grid-template-columns: repeat(3, 1fr);
-}
+.grid--3-cols{grid-template-columns: repeat(3, 1fr);}
 
-.grid--4-cols{
-    grid-template-columns: repeat(4, 1fr);
-}
+.grid--4-cols{grid-template-columns: repeat(4, 1fr);}
 
-.grid--5-cols{
-    grid-template-columns: repeat(5, 1fr);
-}

@@ -1,8 +1,22 @@
 .section-about{
     background-color: $color-grey-light-1;
     padding: 25rem 0;
-    //zbog podignutog headera
     margin-top: -20vh;
+
+    @include respond(tab-port){
+        padding: 20rem 0 50rem 0;
+    }
+    @include respond(phone){
+        padding: 20rem 0 45rem 0;
+    }
+
+    .grid--2-cols{
+
+        @include respond(tab-port){
+            max-width: 80%;
+        
+        }
+    }
 }
 
 .section-features{
@@ -21,23 +35,38 @@
     & > *{
         transform: skewY(7deg);
 
-    } 
+    }
+
+    @include respond(tab-port){
+        padding: 15rem 0;
+    }
 }
 
 .section-tours{
     margin-top: -12rem;
     background-color: $color-grey-light-1;
     padding: 25rem 0 15rem 0;
+
+    @include respond(tab-port){
+        padding: 20rem 0 10rem 0;
+    }
 }
 
 .section-stories{
     position: relative;
     padding: 15rem 0;
+
+    @include respond(tab-port){
+        padding: 10rem 0;
+    }
 }
 .section-book{
     padding: 15rem 0;
     background-image: linear-gradient(to right bottom, $color-primary-light, $color-primary-dark);
     
+    @include respond(tab-port){
+        padding: 10rem 0;
+    }
 }
 
 .book{

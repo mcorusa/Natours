@@ -27,6 +27,8 @@
         //clip-path: circle(75px);
         transform: translateX(-3rem) skewX(10deg);
         position: relative;
+
+        @include respond(phone){}
     }
     
     &__img{
@@ -34,7 +36,6 @@
         transform: translateX(-4rem) scale(1.4);
         backface-visibility: hidden;
         transition: all .5s ease;
-        
     }
 
     &__text{
