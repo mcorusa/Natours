@@ -34,11 +34,11 @@
     //sva direktna djeca section-features-a
     & > *{
         transform: skewY(7deg);
-
     }
+    
 
     @include respond(tab-port){
-        padding: 15rem 0;
+        padding: 10rem 0;
     }
 }
 
@@ -71,14 +71,32 @@
 
 .book{
     background-image:linear-gradient(105deg,
-    rgba($color-white, .9) 0%,
-    rgba($color-white, .9) 50%,
-    transparent 50%),
-    url(../img/nat-10.jpg);
-    background-size: cover;
+                        rgba($color-white, .9) 0%,
+                        rgba($color-white, .9) 50%,
+                        transparent 50%),
+                        url(../img/nat-10.jpg);
+    background-size: 100%;
     border-radius: $default-radius;
     box-shadow: $shadow-ml;
+    
 
+    @include respond(tab-land){
+        background-image:linear-gradient(105deg,
+                        rgba($color-white, .9) 0%,
+                        rgba($color-white, .9) 65%,
+                        transparent 65%),
+                        url(../img/nat-10.jpg);
+        background-size: cover;
+        padding: 10rem 0;
+    }
+
+    @include respond(tab-port){
+        background-image:linear-gradient(to right,
+                        rgba($color-white, .9) 0%,
+                        rgba($color-white, .9) 100%),
+                        url(../img/nat-10.jpg);
+
+    }
 
 
     // grid-template-columns: 2fr 1fr;
@@ -89,5 +107,12 @@
         padding: 6rem;
         // background-color: rgba($color: #fff, $alpha: .6);
         // clip-path: polygon(0 0, 90% 0, 70% 100%, 0 100%);
+
+        @include respond(tab-land){
+            width: 65%;
+        }
+        @include respond(tab-port){
+            width: 100%;
+        }
     }
 }

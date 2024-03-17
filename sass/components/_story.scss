@@ -1,19 +1,26 @@
 //moje
 .story{
-    max-width: 90rem;
+    width: 75%;
     margin: 0 auto;
     box-shadow: 0 3rem 6rem rgba($color-black, .1);
     background-color: rgba($color-white, .6);
     border-radius: 3px;
     padding: 6rem;
-    font-size: $default-font-size;
     padding-left: 9rem;
+    font-size: $default-font-size;
     transform: skewX(-10deg);
     margin-bottom: 9rem;
 
-    & > *{
-        transform: skewX(10deg);
+    @include respond(tab-port){
+        width: 100%;
+        padding: 4rem;
+        padding-left: 7rem;
     }
+
+    @include respond(phone){
+        transform: skewX(0);
+    }
+    
 
     &__shape{
         width: 15rem;
@@ -28,7 +35,9 @@
         transform: translateX(-3rem) skewX(10deg);
         position: relative;
 
-        @include respond(phone){}
+        @include respond(phone){
+            transform: translateX(-3rem) skewX(0);
+        }
     }
     
     &__img{
@@ -36,10 +45,15 @@
         transform: translateX(-4rem) scale(1.4);
         backface-visibility: hidden;
         transition: all .5s ease;
+        
     }
 
     &__text{
         transform: skewX(10deg);
+
+        @include respond(phone){
+            transform: skewX(0);
+        }
     }
 
     &__caption{
